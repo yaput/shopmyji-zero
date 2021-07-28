@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\ProductPrice;
 use App\Channel;
+use App\Promo;
 
 
 class OutcomingStock extends Model
@@ -28,6 +29,9 @@ class OutcomingStock extends Model
                     $total_net = $discount - $channel->fee_fixed;
                 }
             } 
+
+            // TODO: Count promo if exist
+            // $promo = Promo::find($model->)
             $model->total_net = $total_net;
         }); 
     }
